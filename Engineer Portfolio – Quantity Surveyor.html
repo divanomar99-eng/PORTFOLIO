@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>YOUR NAME | Licensed Civil Engineer &amp; Quantity Surveyor</title>
+<meta name="description" content="Portfolio of a Licensed Civil Engineer specializing in quantity surveying, cost estimation, Bills of Quantities and tender preparation.">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<!-- Font Awesome (JS build, renders icons as inline SVG) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" defer></script>
+<style>
+/* ===== Design tokens ===== */
+:root{
+  --blue:#1d4ed8; --blue-dark:#12327f; --blue-soft:#eaf1ff;
+  --gray-900:#1f2937; --gray-600:#5b6472; --gray-200:#e5e7eb; --gray-100:#f3f5f8;
+  --white:#fff; --radius:14px; --shadow:0 6px 24px rgba(18,50,127,.08);
+  --font-head:'Poppins',system-ui,sans-serif; --font-body:'Inter',system-ui,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px));color-scheme:light}
+body{margin:0;background:var(--white);color:var(--gray-900);font-family:var(--font-body);line-height:1.65}
+img{max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--font-head);line-height:1.2;margin:0}
+.container{width:min(1120px,92%);margin-inline:auto}
+section{padding:90px 0}
+.alt{background:var(--gray-100)}
+.eyebrow{color:var(--blue);font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem}
+.section-title{font-size:clamp(1.7rem,3.5vw,2.3rem);margin:8px 0 12px}
+.section-title::after{content:"";display:block;width:56px;height:4px;background:var(--blue);border-radius:4px;margin-top:12px}
+.lead{color:var(--gray-600);max-width:640px}
+.grid{display:grid;gap:24px;margin-top:40px}
+
+/* ===== Buttons ===== */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 26px;border-radius:10px;font-weight:600;border:2px solid var(--blue);cursor:pointer;font:600 1rem var(--font-body);transition:.25s}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-primary:hover{background:var(--blue-dark);border-color:var(--blue-dark);transform:translateY(-2px)}
+.btn-outline{background:rgba(255,255,255,.1);color:#fff;border-color:#fff}
+.btn-outline:hover{background:#fff;color:var(--blue-dark);transform:translateY(-2px)}
+
+/* ===== Navigation ===== */
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--gray-200);padding-top:env(safe-area-inset-top,0px)}
+nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font:700 1.15rem var(--font-head);color:var(--blue-dark)}
+.logo i{color:var(--blue);margin-right:8px}
+.nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.nav-links a{font-weight:500;color:var(--gray-600);padding:6px 0;border-bottom:2px solid transparent;transition:.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--blue);border-color:var(--blue)}
+.menu-btn{display:none;background:none;border:0;font-size:1.4rem;color:var(--blue-dark);cursor:pointer}
+
+/* ===== Hero ===== */
+.hero{min-height:100vh;display:flex;align-items:center;color:#fff;padding-top:110px;
+  /* Gradient is the fallback if the photo can't load */
+  background:linear-gradient(110deg,rgba(14,35,92,.93) 35%,rgba(29,78,216,.55)),
+  url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1800&q=70') center/cover,
+  linear-gradient(135deg,#12327f,#1d4ed8)}
+.hero h1{font-size:clamp(2.3rem,6vw,4rem);margin:10px 0 12px}
+.hero .title{font:600 clamp(1rem,2.2vw,1.3rem) var(--font-body);color:#bfd3ff}
+.hero p{max-width:600px;margin:20px 0 34px;color:#e6eeff;font-size:1.08rem}
+.hero .actions{display:flex;flex-wrap:wrap;gap:14px}
+.stats{display:flex;flex-wrap:wrap;gap:36px;margin-top:56px}
+.stats strong{display:block;font:700 1.9rem var(--font-head)}
+.stats span{color:#bfd3ff;font-size:.9rem}
+
+/* ===== Cards ===== */
+.card{background:#fff;border:1px solid var(--gray-200);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px;transition:.3s}
+.card:hover{transform:translateY(-6px);box-shadow:0 14px 34px rgba(18,50,127,.16);border-color:#c5d6fb}
+.icon{width:52px;height:52px;border-radius:12px;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;font-size:1.3rem;margin-bottom:16px}
+
+/* ===== About ===== */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about-img{min-height:380px;border-radius:var(--radius);box-shadow:var(--shadow);
+  background:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=70') center/cover,linear-gradient(135deg,#dbe6ff,#9db8f5)}
+.points{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:12px}
+.points li i{color:var(--blue);margin-right:10px}
+.exp-badge{display:inline-block;margin-top:22px;background:var(--blue-soft);color:var(--blue-dark);padding:10px 18px;border-radius:10px;font-weight:600}
+
+/* ===== Skills ===== */
+.skills{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.skill{padding:22px 24px}
+.skill-top{display:flex;justify-content:space-between;font-weight:600;margin-bottom:12px}
+.skill-top i{color:var(--blue);margin-right:10px;width:18px}
+.bar{height:9px;background:var(--gray-200);border-radius:9px;overflow:hidden}
+.bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),#5b8cff);border-radius:9px;transition:width 1.4s cubic-bezier(.2,.7,.2,1)}
+
+/* ===== Timeline ===== */
+.timeline{position:relative;margin-top:44px;padding-left:34px;border-left:3px solid #c5d6fb}
+.timeline::before{content:"";position:absolute;left:-11px;top:6px;width:19px;height:19px;border-radius:50%;background:var(--blue);border:4px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.job-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-bottom:6px}
+.job-head h3{font-size:1.3rem}
+.date{background:var(--blue-soft);color:var(--blue-dark);padding:4px 14px;border-radius:20px;font-size:.88rem;font-weight:600}
+.company{color:var(--blue);font-weight:600;margin-bottom:16px}
+.duties{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px 24px}
+.duties li::before{content:"\2713";color:var(--blue);font-weight:700;margin-right:10px}
+
+/* ===== Projects ===== */
+.projects{grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.project{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.thumb{height:190px;background-size:cover;background-position:center;transition:transform .6s}
+.project:hover .thumb{transform:scale(1.06)}
+.thumb-wrap{overflow:hidden}
+.p-body{padding:24px;display:flex;flex-direction:column;gap:12px;flex:1}
+.tag{font-size:.78rem;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:.08em}
+.role{color:var(--gray-600);font-size:.92rem}
+.p-body ul{margin:0;padding-left:18px;color:var(--gray-600);font-size:.95rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.chips span{background:var(--gray-100);border:1px solid var(--gray-200);border-radius:20px;padding:3px 12px;font-size:.8rem;color:var(--gray-600)}
+
+/* ===== Certifications ===== */
+.certs{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.cert{display:flex;gap:18px;align-items:flex-start}
+.cert .icon{flex-shrink:0;margin:0}
+.cert p{margin:4px 0 0;color:var(--gray-600);font-size:.95rem}
+
+/* ===== Contact ===== */
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;margin-top:40px}
+.info{display:grid;gap:18px;align-content:start}
+.info-item{display:flex;gap:16px;align-items:center}
+.info-item .icon{margin:0}
+.info-item small{color:var(--gray-600);display:block}
+form{display:grid;gap:16px}
+label{font-weight:600;font-size:.9rem}
+input,textarea{width:100%;margin-top:6px;padding:13px 14px;border:1px solid var(--gray-200);border-radius:10px;font:1rem var(--font-body);background:#fff;color:var(--gray-900);transition:.2s}
+input:focus,textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 4px var(--blue-soft)}
+textarea{min-height:140px;resize:vertical}
+#formNote{color:var(--blue-dark);font-weight:600;min-height:1.4em;margin:0}
+
+/* ===== Footer ===== */
+footer{background:var(--blue-dark);color:#cfdcff;padding:30px 0 calc(30px + env(safe-area-inset-bottom,0px))}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px}
+.social{display:flex;gap:12px}
+.social a{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.12);display:grid;place-items:center;transition:.25s}
+.social a:hover{background:#fff;color:var(--blue-dark);transform:translateY(-3px)}
+
+/* ===== Scroll reveal ===== */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.show{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* ===== Responsive ===== */
+@media (max-width:820px){
+  .about,.contact{grid-template-columns:1fr}
+  .about-img{min-height:260px}
+  section{padding:70px 0}
+  .menu-btn{display:block}
+  .nav-links{position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;gap:0;border-bottom:1px solid var(--gray-200);display:none}
+  .nav-links.open{display:flex}
+  .nav-links a{display:block;padding:14px 5%;border:0}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Header / Navigation ===== -->
+<header>
+  <div class="container">
+    <nav aria-label="Main navigation">
+      <a href="#home" class="logo"><i class="fa-solid fa-helmet-safety"></i>YOUR NAME</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ===== 1. Hero ===== -->
+<section class="hero" id="home">
+  <div class="container reveal">
+    <span class="eyebrow" style="color:#bfd3ff">Construction Cost Consultancy</span>
+    <h1>YOUR NAME</h1>
+    <div class="title">Licensed Civil Engineer | Quantity Surveyor | Estimator</div>
+    <p>Civil Engineer with experience in quantity take-offs, cost estimation, Bills of Quantities, tender preparation, and construction cost management.</p>
+    <div class="actions">
+      <!-- Replace href with the path to your CV file -->
+      <a class="btn btn-primary" href="your-cv.pdf" download><i class="fa-solid fa-download"></i> Download CV</a>
+      <a class="btn btn-outline" href="#contact"><i class="fa-solid fa-envelope"></i> Contact Me</a>
+    </div>
+    <div class="stats">
+      <div><strong>X+</strong><span>Years Experience</span></div>
+      <div><strong>XX+</strong><span>Tenders Prepared</span></div>
+      <div><strong>PRC</strong><span>Licensed Engineer</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2. About ===== -->
+<section id="about">
+  <div class="container about">
+    <div class="about-img reveal" role="img" aria-label="Engineering drawings and plans"></div>
+    <div class="reveal">
+      <span class="eyebrow">About Me</span>
+      <h2 class="section-title">Accurate numbers behind every build</h2>
+      <p class="lead">I am a Licensed Civil Engineer focused on quantity surveying and estimation. I turn drawings and specifications into reliable quantities, clear Bills of Quantities, and competitive, well-documented tenders.</p>
+      <ul class="points">
+        <li><i class="fa-solid fa-circle-check"></i>Analytical, detail-oriented approach to take-offs and pricing</li>
+        <li><i class="fa-solid fa-circle-check"></i>Cost control from tender stage through progress billing</li>
+        <li><i class="fa-solid fa-circle-check"></i>Clear coordination with engineers, architects and subcontractors</li>
+      </ul>
+      <div class="exp-badge"><i class="fa-solid fa-briefcase"></i> [X] Years of Professional Experience</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3. Skills ===== -->
+<section class="alt" id="skills">
+  <div class="container">
+    <div class="reveal"><span class="eyebrow">Expertise</span><h2 class="section-title">Technical Skills</h2></div>
+    <!-- data-level controls the progress bar fill (0-100) -->
+    <div class="grid skills">
+      <div class="card skill reveal"><div class="skill-top"><span><i class="fa-solid fa-calculator"></i>Quantity Surveying</span><span>90%</span></div><div class="bar"><span data-level="90"></span></div></div>
+      <div class="card skill reveal"><div class="skill-top"><span><i class="fa-solid fa-coins"></i>Cost Estimation</span><span>90%</span></div><div class="bar"><span data-level="90"></span></div></div>
+      <div class="card skill reveal"><div class="skill-top"><span><i class="fa-solid fa-ruler-combined"></i>Quantity Take-Off</span><span>92%</span></div><div class="bar"><span data-level="92"></span></div></div>
+      <div class="card skill reveal"><div class="skill-top"><span><i class="fa-solid fa-draw-polygon"></i>PlanSwift</span><span>85%</span></div><div class="bar"><span data-level="85"></span></div></div>
+      <div class="card skill reveal"><div class="skill-top"><span><i class="fa-solid fa-file-excel"></i>Microsoft Excel</span><span>92%</span></div><div class="bar"><span data-level="92"></span></div></div>
+      <div class="card skill reveal"><div class="skill-top"><span><i class="fa-solid fa-file-pdf"></i>Bluebeam</span><span>85%</span></div><div class="bar"><span data-level="85"></span></div></div>
+      <div class="card skill reveal"><div class="skill-top"><span><i class="fa-solid fa-compass-drafting"></i>AutoCAD</span><span>80%</span></div><div class="bar"><span data-level="80"></span></div></div>
+      <div class="card skill reveal"><div class="skill-top"><span><i class="fa-solid fa-chart-gantt"></i>MS Project</span><span>75%</span></div><div class="bar"><span data-level="75"></span></div></div>
+      <div class="card skill reveal"><div class="skill-top"><span><i class="fa-solid fa-handshake"></i>Procurement Support</span><span>80%</span></div><div class="bar"><span data-level="80"></span></div></div>
+      <div class="card skill reveal"><div class="skill-top"><span><i class="fa-solid fa-file-signature"></i>Tender Preparation</span><span>88%</span></div><div class="bar"><span data-level="88"></span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4. Experience ===== -->
+<section id="experience">
+  <div class="container">
+    <div class="reveal"><span class="eyebrow">Career</span><h2 class="section-title">Work Experience</h2></div>
+    <div class="timeline">
+      <article class="card reveal">
+        <div class="job-head"><h3>Quantity Surveyor</h3><span class="date">May 2025 – Present</span></div>
+        <div class="company"><i class="fa-solid fa-building"></i> Don Lee Builders Inc.</div>
+        <ul class="duties">
+          <li>Quantity take-offs</li><li>BOQ preparation</li><li>Cost estimation</li><li>Tender submissions</li>
+          <li>Variation orders</li><li>Progress billing</li><li>Subcontractor quotation review</li><li>Drawing review and coordination</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5. Projects ===== -->
+<section class="alt" id="projects">
+  <div class="container">
+    <div class="reveal"><span class="eyebrow">Portfolio</span><h2 class="section-title">Selected Projects</h2></div>
+    <div class="grid projects">
+      <article class="card project reveal">
+        <div class="thumb-wrap"><div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=70'),linear-gradient(135deg,#9db8f5,#1d4ed8)"></div></div>
+        <div class="p-body">
+          <span class="tag">Residential</span><h3>High-Rise Residential Building</h3>
+          <div class="role"><i class="fa-solid fa-user-gear"></i> Role: Quantity Surveyor</div>
+          <p>Multi-storey residential tower with podium parking and amenity levels.</p>
+          <ul><li>Structural and architectural quantity take-offs</li><li>Detailed BOQ and cost plan</li><li>Progress billing and variations</li></ul>
+          <div class="chips"><span>PlanSwift</span><span>Excel</span><span>Bluebeam</span></div>
+        </div>
+      </article>
+      <article class="card project reveal">
+        <div class="thumb-wrap"><div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=70'),linear-gradient(135deg,#c9d3e3,#5b6472)"></div></div>
+        <div class="p-body">
+          <span class="tag">Commercial</span><h3>Commercial Building Tender</h3>
+          <div class="role"><i class="fa-solid fa-user-gear"></i> Role: Estimator</div>
+          <p>Competitive tender for a mid-rise commercial office building.</p>
+          <ul><li>Complete take-off and pricing</li><li>Subcontractor quotation comparison</li><li>Tender documents and submission</li></ul>
+          <div class="chips"><span>Bluebeam</span><span>Excel</span><span>AutoCAD</span></div>
+        </div>
+      </article>
+      <article class="card project reveal">
+        <div class="thumb-wrap"><div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=70'),linear-gradient(135deg,#dbe6ff,#1d4ed8)"></div></div>
+        <div class="p-body">
+          <span class="tag">Mixed-Use</span><h3>Mixed-Use Development</h3>
+          <div class="role"><i class="fa-solid fa-user-gear"></i> Role: Quantity Surveyor</div>
+          <p>Retail, office and residential components within one development.</p>
+          <ul><li>Cost breakdown per building component</li><li>Drawing review and coordination</li><li>Cost monitoring against budget</li></ul>
+          <div class="chips"><span>PlanSwift</span><span>MS Project</span><span>Excel</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 6. Certifications ===== -->
+<section id="certifications">
+  <div class="container">
+    <div class="reveal"><span class="eyebrow">Credentials</span><h2 class="section-title">Certifications</h2></div>
+    <div class="grid certs">
+      <div class="card cert reveal"><div class="icon"><i class="fa-solid fa-certificate"></i></div><div><h3>Licensed Civil Engineer</h3><p>Professional Regulation Commission (PRC)</p></div></div>
+      <div class="card cert reveal"><div class="icon"><i class="fa-solid fa-graduation-cap"></i></div><div><h3>Additional Training</h3><p>Add your course, provider and year here.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 7. Contact ===== -->
+<section class="alt" id="contact">
+  <div class="container">
+    <div class="reveal"><span class="eyebrow">Get in Touch</span><h2 class="section-title">Contact Me</h2><p class="lead">Need quantity take-offs, a BOQ, or tender support? Send a message.</p></div>
+    <div class="contact">
+      <div class="info reveal">
+        <div class="info-item"><div class="icon"><i class="fa-solid fa-envelope"></i></div><div><small>Email</small><a href="mailto:your.email@example.com">your.email@example.com</a></div></div>
+        <div class="info-item"><div class="icon"><i class="fa-brands fa-linkedin-in"></i></div><div><small>LinkedIn</small><a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">linkedin.com/in/your-profile</a></div></div>
+        <div class="info-item"><div class="icon"><i class="fa-solid fa-location-dot"></i></div><div><small>Location</small>Your City, Philippines</div></div>
+      </div>
+      <form class="card reveal" id="contactForm">
+        <label>Name<input type="text" id="name" required autocomplete="name"></label>
+        <label>Email<input type="email" id="email" required autocomplete="email"></label>
+        <label>Message<textarea id="message" required></textarea></label>
+        <button class="btn btn-primary" type="submit"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+        <p id="formNote" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===== 8. Footer ===== -->
+<footer>
+  <div class="container foot">
+    <span>&copy; <span id="year">2026</span> YOUR NAME. All rights reserved.</span>
+    <div class="social">
+      <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="mailto:your.email@example.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Mobile menu toggle */
+const navLinks = document.getElementById('navLinks');
+document.getElementById('menuBtn').addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+/* Footer year */
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* Scroll reveal + skill bar fill */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('show');
+    const bar = e.target.querySelector('.bar span');
+    if (bar) bar.style.width = bar.dataset.level + '%';
+    io.unobserve(e.target);
+  });
+}, { threshold: .15 });
+document.querySelectorAll('.reveal').forEach((el, i) => {
+  el.style.transitionDelay = (i % 4) * 80 + 'ms';
+  io.observe(el);
+});
+
+/* Highlight active nav link while scrolling */
+const links = [...navLinks.querySelectorAll('a')];
+const spy = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
+  });
+}, { rootMargin: '-45% 0px -50% 0px' });
+document.querySelectorAll('main section[id]').forEach(s => spy.observe(s));
+
+/* Contact form: opens the visitor's email app (no backend needed).
+   Swap for Formspree/Netlify Forms etc. if you want in-page submissions. */
+document.getElementById('contactForm').addEventListener('submit', ev => {
+  ev.preventDefault();
+  const n = document.getElementById('name').value, m = document.getElementById('message').value, f = document.getElementById('email').value;
+  const body = encodeURIComponent(m + '\n\nFrom: ' + n + ' (' + f + ')');
+  window.location.href = 'mailto:your.email@example.com?subject=' + encodeURIComponent('Portfolio inquiry from ' + n) + '&body=' + body;
+  document.getElementById('formNote').textContent = 'Thank you! Your email app should open to send the message.';
+});
+</script>
+</body>
+</html>
